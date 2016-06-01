@@ -10,3 +10,7 @@ An example wall could have heights: 2,3,5,1,1,4,6,3 . If we visualize this wall,
 
 ## My solutions
 One way to solve this is to generate a 2d array and check each open space if it is between two heights. This will be the purpose of array_approach.php .
+
+#### Array method performance and limits
+The memory use of this method appears to be exponetial based on the length of the wall and maximum height. When cranking the inputs to 10,000 PHP ran out of memory.
+Currently, this method can only handle positive heights.
