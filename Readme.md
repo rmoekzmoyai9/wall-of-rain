@@ -17,3 +17,6 @@ Currently, this method can only handle positive heights.
 
 ## Next solution: Water above pillar
 A different solution would be to take the array and at each point, check to see if there is a higher number on either side. Ex. we have a wall with values 2, 1, 2. The first pillar is asked "Do you have anyone higher on your left?" and then "Do you have anyone higher on your right?". If both are true, which ever height difference is lower is the amount of water that can be above said pillar. So the flow would go 1st pillar checks left (no more wall) then right (lower and same height, nothing higher). This means no water can be above pillar 1. Pillar 2 checks left (highest pillar is the first with a diff of 1) and the right (same result as left). This means that 1 unit of water can be over pillar two. Pillar 3 ends up being a mirror of pillar 1, so in total 1 unit of water can puddle in this wall.
+
+#### Pillar method performance and limits
+This thing runs faster than the array method, and uses up very little memory. It is quadratic instead of exponential, which isn't perfect. The pillar method can handle lengths up to 10k without crashing. It can even handle negetive heights!
