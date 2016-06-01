@@ -31,9 +31,12 @@ function leftHeight($input, $i) {
 	
 	for ($j = $i - 1; $j > 0; $j--) {
 		if ($input[$i] < $input[$j]) {
-			$biggestDifference = $input[$j] - $input[$i];
+			$difference = $input[$j] - $input[$i];
+			if ($difference > $biggestDifference) {
+				$biggestDifference = $difference;
 		}
 	}
+}
 	
 	return $biggestDifference;
 }
@@ -46,7 +49,10 @@ function rightHeight($input, $i) {
 	
 	for ($j = $i + 1; $j < count($input); $j++) {
 		if ($input[$i] < $input[$j]) {
-			$biggestDifference = $input[$j] - $input[$i];
+			$difference = $input[$j] - $input[$i];
+			if ($difference > $biggestDifference) {
+				$biggestDifference = $difference;
+			}
 		}
 	}
 	
