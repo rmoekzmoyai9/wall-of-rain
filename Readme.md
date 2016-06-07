@@ -20,3 +20,6 @@ A different solution would be to take the array and at each point, check to see 
 
 #### Pillar method performance and limits
 This thing runs faster than the array method, and uses up very little memory. It is quadratic instead of exponential, which isn't perfect. The pillar method can handle lengths up to 10k without crashing. It can even handle negetive heights!
+
+## Refining the Pillar Method
+Right now, the big O notation is n^2. I think we can put in some rules to cut down on iterating over the same columns over and over. Let's say the wall is 4,2,3,5,1. We figure out pillar 1 has no water over it (the ends are always free from water above), then move on to pillar 2. Pillar 2 will have 2 water above. Now for pillar 3, if the height is shorter than pillar 2 + water, than pillar 3 must have water above. So instead of running the full leftHeight rightHeight, we can check the height of pillar 3 first with a constant time if statement.
